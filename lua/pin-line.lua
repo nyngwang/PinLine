@@ -83,11 +83,11 @@ local function unpeek(winnr, stay)
 
   if stay then
     -- Unfold at the cursorline if user wants to stay
-    pin_to_80_percent_height()
   else
     -- Rollback the cursor if the user does not want to stay
     vim.api.nvim_win_set_cursor(winnr, orig_state.cursor)
   end
+  pin_to_80_percent_height()
   win_states[winnr] = nil
 end
 
